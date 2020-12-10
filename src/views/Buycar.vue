@@ -247,6 +247,7 @@ export default {
     margin-bottom: 10px;
     .imgBox {
       margin-left: 10px;
+      height: 100%;
       > img {
         height: 100%;
       }

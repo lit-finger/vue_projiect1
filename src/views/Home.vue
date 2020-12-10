@@ -137,6 +137,9 @@ export default {
       this.select = 0;
     }
   },
+  mounted() {
+    localStorage.setItem("lastUrl", location.hash);
+  },
   methods: {
     ...mapMutations(["changeHomeIndex"]),
     changePage(index) {

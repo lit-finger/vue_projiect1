@@ -69,7 +69,7 @@
             <template #right-icon>
               <van-switch
                 v-model="checked1"
-                size="70"
+                size="45"
                 active-color="#ee0a24"
                 inactive-color="#dcdee0"
               />
@@ -81,7 +81,7 @@
             <template #right-icon>
               <van-switch
                 v-model="checked2"
-                size="70"
+                size="45"
                 active-color="#ee0a24"
                 inactive-color="#dcdee0"
               />
@@ -93,7 +93,7 @@
             <template #right-icon>
               <van-switch
                 v-model="checked3"
-                size="70"
+                size="45"
                 active-color="#ee0a24"
                 inactive-color="#dcdee0"
               />

@@ -7,10 +7,10 @@
         @click-right="onClickRight"
       >
         <template #left>
-          <van-icon name="setting-o" size="70" color="#fff" />
+          <span class="iconfont icon-shezhi"></span>
         </template>
         <template #right>
-          <van-icon name="ellipsis" size="70" color="#fff" />
+          <span class="iconfont icon-icon"></span>
         </template>
       </van-nav-bar>
     </div>
@@ -137,6 +137,7 @@ export default {
     } else {
       this.logFlag = true;
     }
+    localStorage.setItem("lastUrl", location.hash);
   },
   methods: {
     godetail() {
@@ -285,5 +286,12 @@ export default {
 /deep/ .van-nav-bar__title {
   color: #fff;
   font-size: 20px;
+}
+.top .iconfont {
+  font-size: 18px;
+  color: #fff;
+}
+.van-nav-bar__left .iconfont {
+  font-size: 26px;
 }
 </style>

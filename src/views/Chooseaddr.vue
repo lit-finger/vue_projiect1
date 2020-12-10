@@ -39,6 +39,12 @@ export default {
     let userid = localStorage.getItem("logUser");
     addrInfo.getAddr({ userid }).then((res) => {
       this.list = res.data;
+      for (let i = 0; i < res.data.length; i++) {
+        if (res.data[i].isDefault == true) {
+          this.chosenAddressId = res.data[i].id;
+          break;
+        }
+      }
     });
   },
   methods: {

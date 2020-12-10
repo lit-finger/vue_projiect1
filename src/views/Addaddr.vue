@@ -10,6 +10,7 @@
       show-postal
       show-delete
       show-search-result
+      item-height="200"
       :search-result="searchResult"
       :area-columns-placeholder="['请选择', '请选择', '请选择']"
       @save="onSave"
@@ -24,6 +25,7 @@ import { AddressEdit } from "vant";
 import area from "../model/area";
 import addrInfo from "../model/addr";
 import { Toast } from "vant";
+import { mapMutations } from "vuex";
 export default {
   data() {
     return {
@@ -33,6 +35,7 @@ export default {
     };
   },
   created() {
+    this.changeNavFlag(false);
     this.areaList = area;
     let id = this.$route.params.id;
     if (id > 0) {
@@ -41,7 +44,12 @@ export default {
       });
     }
   },
+  beforeRouteLeave(to, from, next) {
+    this.changeNavFlag(true);
+    next();
+  },
   methods: {
+    ...mapMutations(["changeNavFlag"]),
     onSave(item) {
       //   Toast("save");
       let id = this.$route.params.id;

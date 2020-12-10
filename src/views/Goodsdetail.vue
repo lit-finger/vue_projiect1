@@ -127,7 +127,7 @@
     }
     .QandA {
       width: 100%;
-      font-size: 0.18rem;
+      font-size: 13px;
       text-align: left;
       box-sizing: border-box;
       padding: 5px 20px;
@@ -159,7 +159,7 @@
       line-height: 46px;
       border-bottom: 1px solid #e0e0e0;
       > span {
-        font-size: 10px;
+        font-size: 13px;
         color: #b0b0b0;
       }
     }
@@ -170,7 +170,7 @@
       }
     }
     .conText {
-      font-size: 9px;
+      font-size: 13px;
       text-align: left;
       margin-top: 10px;
       .infoText {
@@ -380,6 +380,9 @@ export default {
     classifyInfo.getGoodsInfo(id).then((res) => {
       this.goodsInfo = res;
     });
+  },
+  mounted() {
+    localStorage.setItem("lastUrl", location.hash);
   },
   beforeRouteLeave(to, from, next) {
     this.changeNavFlag(true);

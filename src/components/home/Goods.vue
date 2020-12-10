@@ -49,6 +49,7 @@ export default {
   display: flex;
   justify-content: space-between;
   flex-flow: row wrap;
+  font-size: 12px;
 }
 .con-item {
   width: 48%;

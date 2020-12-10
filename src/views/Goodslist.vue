@@ -8,7 +8,7 @@
         @click-right="onClickRight"
       >
         <template #right>
-          <van-icon name="search" size="70" color="#fff" />
+          <span class="iconfont icon-fangdajing1"></span>
         </template>
       </van-nav-bar>
       <div class="sort">
@@ -196,13 +196,8 @@ export default {
       }
     });
   },
-  created() {
-    // this.changeNavFlag(false);
-    // classifyInfo.getGoodsList({ id: 10 }).then((res) => {
-    //   this.allGoods = res.data[0].list;
-    //   this.goodsList = this.allGoods.slice(0, 10);
-    //   this.flag = true;
-    // });
+  mounted() {
+    localStorage.setItem("lastUrl", location.hash);
   },
   beforeRouteLeave(to, from, next) {
     this.changeNavFlag(true);
@@ -265,6 +260,10 @@ export default {
   color: #fff;
   font-size: 20px;
 }
+.van-nav-bar__right .iconfont {
+  font-size: 20px;
+  color: #fff;
+}
 .sort {
   width: 100%;
   height: 34px;
@@ -275,6 +274,7 @@ export default {
 .sort-item {
   width: 20%;
   position: relative;
+  font-size: 13px;
 }
 .jiantou {
   position: absolute;

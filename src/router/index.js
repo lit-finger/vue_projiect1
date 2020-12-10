@@ -129,7 +129,8 @@ const routes = [{
     path: "/mydetail",
     name: "mydetail",
     meta: {
-      title: "个人详情"
+      title: "个人详情",
+      islogin: true,
     },
     component: () => import("../views/Mydetail.vue")
   },

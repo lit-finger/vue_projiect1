@@ -200,9 +200,12 @@ export default {
             if (this.pwd1.toLowerCase() == this.code1.toLowerCase()) {
               localStorage.setItem("logUser", res.data[0].id);
               Toast.success("登录成功");
-              this.$router.push({
-                name: "main1",
-              });
+              let lastUrl = localStorage.getItem("lastUrl").substring(1);
+              if (lastUrl) {
+                this.$router.push(lastUrl);
+              } else {
+                this.$router.push({ name: "main1" });
+              }
             } else {
               Toast.fail("请输入正确的验证码");
               this.getCode();
@@ -223,9 +226,12 @@ export default {
             if (this.pwd2 == res.data[0].userPwd) {
               localStorage.setItem("logUser", res.data[0].id);
               Toast.success("登录成功");
-              this.$router.push({
-                name: "main1",
-              });
+              let lastUrl = localStorage.getItem("lastUrl").substring(1);
+              if (lastUrl) {
+                this.$router.push(lastUrl);
+              } else {
+                this.$router.push({ name: "main1" });
+              }
             } else {
               Toast.fail("帐号与密码不匹配");
             }
@@ -256,6 +262,15 @@ export default {
         this.code1 += str.charAt(index);
       }
     },
+  },
+  beforeRouteEnter(to, from, next) {
+    // if(from.name=="persondetail"){
+    //   next({name:"persondetail"})
+    // }else{
+    //   next();
+    // }
+    console.log(from);
+    next();
   },
 };
 </script>

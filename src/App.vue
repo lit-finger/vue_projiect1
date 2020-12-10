@@ -69,6 +69,9 @@ export default {
 #nav a span {
   font-size: 19px;
 }
+#nav a {
+  color: #666;
+}
 
 #nav a.router-link-exact-active {
   color: #f00;

@@ -32,6 +32,7 @@
   width: 25%;
   box-sizing: border-box;
   padding: 10px;
+  font-size: 12px;
 }
 .top-item > img {
   width: 100%;
@@ -55,6 +56,7 @@
   height: 36px;
   overflow: hidden;
   margin: 10px 0 6px;
+  font-size: 12px;
 }
 .goodprice {
   font-size: 15px;

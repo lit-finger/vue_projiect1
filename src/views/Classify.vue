@@ -49,6 +49,9 @@ export default {
       this.classifyList2 = res.data[0].list;
     });
   },
+  mounted() {
+    localStorage.setItem("lastUrl", location.hash);
+  },
   methods: {
     getGoodsList() {
       this.$router.push({
@@ -96,5 +99,6 @@ export default {
   box-sizing: border-box;
   border-top: 1px solid #e6e6e6;
   background-color: #fff;
+  font-size: 13px;
 }
 </style>
