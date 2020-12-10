@@ -141,9 +141,16 @@ export default {
   },
   methods: {
     godetail() {
-      this.$router.push({
-        name: "mydetail",
-      });
+      let userid = localStorage.getItem("logUser");
+      if (userid) {
+        this.$router.push({
+          name: "mydetail",
+        });
+      } else {
+        this.$router.push({
+          name: "login",
+        });
+      }
     },
     onClickRight() {},
     goLogin() {

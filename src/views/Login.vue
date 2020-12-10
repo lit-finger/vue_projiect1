@@ -263,14 +263,5 @@ export default {
       }
     },
   },
-  beforeRouteEnter(to, from, next) {
-    // if(from.name=="persondetail"){
-    //   next({name:"persondetail"})
-    // }else{
-    //   next();
-    // }
-    console.log(from);
-    next();
-  },
 };
 </script>
